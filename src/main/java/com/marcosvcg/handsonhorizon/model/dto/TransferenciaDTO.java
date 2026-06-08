@@ -12,13 +12,25 @@ import java.util.UUID;
 
 @Builder
 public record TransferenciaDTO (
-        @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+        @Schema(accessMode = Schema.AccessMode.READ_ONLY,
+                description = "ID único da transferência (gerado automaticamente)")
         UUID id,
+
+        @Schema(description = "ID da conta de origem (débito)",
+                example = "a1b2c3d4-e5f6-7890-abcd-ef1234567890")
         UUID contaOrigemId,
+
+        @Schema(description = "ID da conta de destino (crédito)",
+                example = "f0e9d8c7-b6a5-4321-fedc-ba0987654321")
         UUID contaDestinoId,
-        @Schema(example = "150.00")
+
+        @Schema(description = "Valor a ser transferido em reais",
+                example = "150.00")
         BigDecimal valor,
-        @Schema(type = "string", example = "15/09/2024 20:00:00")
+
+        @Schema(type = "string",
+                description = "Data e hora da transferência",
+                example = "15/09/2024 20:00:00")
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
         LocalDateTime data
 ) {

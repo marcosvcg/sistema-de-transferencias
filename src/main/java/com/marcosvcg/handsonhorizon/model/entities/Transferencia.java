@@ -32,6 +32,6 @@ public class Transferencia {
     @Column(nullable = false)
     private BigDecimal valor;
 
-    @Column(nullable = false)
+    @Column(name = "data_hora",nullable = false)
     private LocalDateTime data;
 }
