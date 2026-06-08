@@ -6,6 +6,6 @@ public record LoginRequestDTO(
         @Schema(example = "carlos@email.com", description = "E-mail cadastrado")
         String email,
 
-        @Schema(example = "senha123", description = "Senha do usuário")
+        @Schema(example = "senha", description = "Senha do usuário")
         String senha
 ) {}
